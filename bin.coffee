@@ -14,5 +14,8 @@ cmd
   .option("-t, --transactor", "start the transactor")
   .parse(process.argv)
 
-if cmd.transactor then bin "transactor"
-if cmd.rest then bin "rest"
+if process.argv.length > 2
+  if cmd.transactor then bin "transactor"
+  if cmd.rest then bin "rest"
+else
+  cmd.help()

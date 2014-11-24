@@ -14,10 +14,13 @@ bin = function(server) {
 
 cmd.option("-r, --rest", "start the rest server").option("-t, --transactor", "start the transactor").parse(process.argv);
 
-if (cmd.transactor) {
-  bin("transactor");
-}
-
-if (cmd.rest) {
-  bin("rest");
+if (process.argv.length > 2) {
+  if (cmd.transactor) {
+    bin("transactor");
+  }
+  if (cmd.rest) {
+    bin("rest");
+  }
+} else {
+  cmd.help();
 }

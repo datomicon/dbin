@@ -20,6 +20,7 @@
   "author": "Orlin M Bozhinov <om@soundsapiens.com>",
   "contributors": [],
   "main": "servers.js",
+  "bin": { "dbin" : "./cli.js" },
   "dependencies": {
     "childish-process": "0.0.x",
     "commander": "^2.5.0"

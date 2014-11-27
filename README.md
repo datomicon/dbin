@@ -2,7 +2,6 @@
 
 Helps run [Datomic](http://datomic.com) servers with configuration.
 
-## Unlicensed
+## License
 
-This is free and unencumbered public domain software.
-For more information, see [UNLICENSE](http://unlicense.org).
+[MIT](http://orlin.mit-license.org)

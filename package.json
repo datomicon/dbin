@@ -11,11 +11,11 @@
   "version": "0.0.0-1",
   "repository": {
     "type": "git",
-    "url": "git://github.com/orlin/datomic-bin.git"
+    "url": "git://github.com/datomicon/datomic-bin.git"
   },
   "bugs": {
     "mail": "om@soundsapiens.com",
-    "url": "https://github.com/orlin/datomic-bin/issues"
+    "url": "https://github.com/datomicon/datomic-bin/issues"
   },
   "author": "Orlin M Bozhinov <om@soundsapiens.com>",
   "contributors": [],
@@ -39,8 +39,8 @@
   },
   "licenses": [
     {
-      "type": "Unlicense",
-      "url": "http://unlicense.org/"
+      "type": "MIT",
+      "url": "http://orlin.mit-license.org"
     }
   ]
 }

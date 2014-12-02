@@ -2,7 +2,7 @@ var alias_uri, base_path, cfg, home;
 
 cfg = require("./defaults.json");
 
-home = require('home-dir').directory + "/";
+home = cfg.homeDir ? require('home-dir').directory + "/" : "";
 
 base_path = "" + home + cfg.located + "/datomic-" + cfg.edition + "-" + cfg.version;
 

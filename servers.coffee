@@ -1,5 +1,5 @@
 cfg = require("./defaults.json")
-home = require('home-dir').directory + "/"
+home = if cfg.homeDir then require('home-dir').directory + "/" else ""
 
 base_path = "#{home}#{cfg.located}/datomic-#{cfg.edition}-#{cfg.version}"
 alias_uri = "#{cfg.rest.alias} #{cfg.rest.uri}"

@@ -1,4 +1,5 @@
 {
+  "homeDir": true,
   "edition": "free",
   "located": ".datomic-free/versions",
   "version": "0.9.5067",

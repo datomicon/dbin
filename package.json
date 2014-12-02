@@ -8,7 +8,7 @@
     "bin",
     "spawn"
   ],
-  "version": "0.0.0-2",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
     "url": "git://github.com/datomicon/datomic-bin.git"
@@ -20,19 +20,26 @@
   "author": "Orlin M Bozhinov <om@soundsapiens.com>",
   "contributors": [],
   "main": "servers.js",
-  "bin": { "dbin" : "./cli.js" },
+  "bin": {
+    "dbin": "./cli.js"
+  },
+  "preferGlobal": true,
   "dependencies": {
-    "childish-process": "0.0.x",
-    "commander": "^2.5.0"
+    "childish-process": "*",
+    "commander": "^2.5.0",
+    "datomic-free": "^0.1.0",
+    "home-dir": "^0.2.0"
   },
   "devDependencies": {
+    "install-g": "*",
     "coffee-script": "^1.8.0",
     "gulp": "^3.8.10",
     "gulp-coffee": "^2.2.0",
     "gulp-util": "^3.0.1"
   },
   "scripts": {
-    "gulp": "./node_modules/.bin/gulp"
+    "gulp": "./node_modules/.bin/gulp",
+    "install": "./node_modules/.bin/install-g || true"
   },
   "engines": {
     "node": "0.10.x"

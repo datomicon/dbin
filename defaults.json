@@ -1,6 +1,7 @@
 {
+  "homeDir": true,
   "edition": "free",
-  "located": "datomic",
+  "located": ".datomic-free/versions",
   "version": "0.9.5067",
   "rest": {
     "port": 8888,

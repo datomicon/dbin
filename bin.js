@@ -1,15 +1,19 @@
-var bin, cmd, run, servers;
+var bin, cmd, exe, run, servers, _ref;
 
 servers = require("./servers");
 
 cmd = require("commander");
 
-run = require("childish-process").run;
+_ref = require("childish-process"), exe = _ref.exe, run = _ref.run;
 
 bin = function(server) {
   var serve;
   serve = servers[server];
-  return console.log(serve);
+  if (serve.opts == null) {
+    serve.opts = {};
+  }
+  console.log(serve.cmd);
+  return run(serve.cmd, serve.opts);
 };
 
 cmd.option("-r, --rest", "start the rest server").option("-t, --transactor", "start the transactor").parse(process.argv);

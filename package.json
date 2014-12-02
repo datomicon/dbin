@@ -27,7 +27,8 @@
   "dependencies": {
     "childish-process": "*",
     "commander": "^2.5.0",
-    "datomic-free": "^0.1.0"
+    "datomic-free": "^0.1.0",
+    "home-dir": "^0.2.0"
   },
   "devDependencies": {
     "install-g": "*",

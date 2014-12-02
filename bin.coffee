@@ -2,12 +2,13 @@
 
 servers = require("./servers")
 cmd = require("commander")
-run = require("childish-process").run
+{exe, run} = require("childish-process")
 
 bin = (server) ->
   serve = servers[server]
-  console.log serve
-  # run serve.cmd, if serve.opts? then serve.opts else {}
+  serve.opts ?= {}
+  console.log serve.cmd
+  run serve.cmd, serve.opts
 
 cmd
   .option("-r, --rest", "start the rest server")

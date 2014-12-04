@@ -11,11 +11,11 @@
   "version": "0.0.1-1",
   "repository": {
     "type": "git",
-    "url": "git://github.com/datomicon/datomic-bin.git"
+    "url": "git://github.com/datomicon/dbin.git"
   },
   "bugs": {
     "mail": "om@soundsapiens.com",
-    "url": "https://github.com/datomicon/datomic-bin/issues"
+    "url": "https://github.com/datomicon/dbin/issues"
   },
   "author": "Orlin M Bozhinov <om@soundsapiens.com>",
   "contributors": [],

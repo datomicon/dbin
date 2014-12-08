@@ -1,13 +1,15 @@
 #!/usr/bin/env node
 
 var def = require("./defaults.json");
+var child = require("childish-process");
+
+// installs dbin globally, if it isn't already there
+child.run("./node_modules/.bin/install-g");
 
 if (def.edition === "free") {
-  var child = require("childish-process");
-  child.exe("./node_modules/.bin/install-g || true", function() {
-    // datomic-free update depends on a global install
-    // though either ok to fail (with || true)
-    child.run("datomic-free update " + def.version,
-      {"cwd": process.cwd() + "/node_modules/datomic-free"});
-  });
+  // "&&" should prevent invalid symlink, could also run them in parallel, but
+  // datomic-free use would take any string without checking for valid version
+  child.run("datomic-free update " + def.version + " && " +
+            "datomic-free use "    + def.version,
+    {"cwd": process.cwd() + "/node_modules/datomic-free"});
 }

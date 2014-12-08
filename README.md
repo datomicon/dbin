@@ -19,9 +19,8 @@ This `dbin` package should install
 
 Here are some example commands:
 
-* use datomic-free version - $ `datomic-free use 0.9.5067`
-* get help without options - $ `dbin`
-* start the transactor and rest servers - $ `dbin -tr`
+* $ `dbin` - get help without options
+* $ `dbin -tr` - start the transactor and rest servers
 
 ## License
 

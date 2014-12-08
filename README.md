@@ -19,8 +19,8 @@ This `dbin` package should install
 
 Here are some example commands:
 
-* get help without options - $ `dbin`
-* start the transactor and rest servers - $ `dbin -tr`
+* $ `dbin` - get help without options
+* $ `dbin -tr` - start the transactor and rest servers
 
 ## License
 

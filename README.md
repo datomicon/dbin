@@ -1,4 +1,4 @@
-# dbin -- datomic-bin
+# dbin -- datomic/bin
 
 [![NPM](https://nodei.co/npm/dbin.png?mini=true)](https://www.npmjs.org/package/dbin)
 

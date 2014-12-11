@@ -6,6 +6,6 @@
   "rest": {
     "port": 8888,
     "alias": "free",
-    "uri": "datomic:dev://localhost:4334/"
+    "uri": "datomic:free://localhost:4334/"
   }
 }

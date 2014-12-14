@@ -22,6 +22,11 @@ Here are some example commands:
 * $ `dbin` - get help without options
 * $ `dbin -tr` - start the transactor and rest servers
 
+## Testing [![Build Status](https://secure.travis-ci.org/datomicon/dbin.png)](http://travis-ci.org/datomicon/dbin)
+
+1. `dbin -rt`
+2. `npm test`
+
 ## License
 
 [MIT](http://orlin.mit-license.org)

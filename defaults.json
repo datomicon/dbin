@@ -5,7 +5,7 @@
   "version": "0.9.5078",
   "rest": {
     "port": 8888,
-    "alias": "free",
+    "alias": "let",
     "uri": "datomic:free://localhost:4334/"
   }
 }

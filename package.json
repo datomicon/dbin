@@ -40,7 +40,8 @@
   },
   "scripts": {
     "gulp": "./node_modules/.bin/gulp",
-    "install": "./install.js || true"
+    "install": "./install.js || true",
+    "test": "dbin gets-ok?"
   },
   "engines": {
     "node": "0.10.x"

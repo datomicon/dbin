@@ -3,10 +3,11 @@
   "edition": "free",
   "located": ".datomic-free/versions",
   "version": "0.9.5078",
-  "transactor": {},
+  "transactor": {
+    "uri": "datomic:free://localhost:4334/"
+  },
   "rest": {
     "port": 8888,
-    "alias": "let",
-    "uri": "datomic:free://localhost:4334/"
+    "alias": "let"
   }
 }

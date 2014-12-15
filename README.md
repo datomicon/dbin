@@ -23,7 +23,7 @@ Here are some example commands:
 
 * $ `dbin` - get help without options
 * $ `dbin -tr` - start the transactor and rest servers
-* $ `dbin gets-ok?` - wait-up for the servers to start / answer with yes or no
+* $ `dbin gets-ok?` - wait-up for the servers to start / answer with yes or no (whether they did)
 
 ### lib
 

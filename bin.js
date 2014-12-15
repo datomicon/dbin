@@ -1,11 +1,18 @@
-var cmd, dbin;
+var cmd, dbin, onUp;
 
 dbin = require("./index.js").use();
 
 cmd = require("commander");
 
+onUp = require("on-up");
+
 cmd.command("gets-ok?").description("get the rest api alias and report with a yes or not").action(function() {
-  return dbin.gets(function(res) {
+  return onUp({
+    req: {
+      uri: dbin.cfg.rest.base
+    },
+    dots: true
+  }, function(res) {
     if (res.statusCode === 200) {
       console.log("yes");
       return process.exit(0);

@@ -2,12 +2,13 @@
 
 dbin = require("./index.js").use()
 cmd = require("commander")
+onUp = require("on-up")
 
 cmd
   .command("gets-ok?")
   .description("get the rest api alias and report with a yes or not")
   .action ->
-    dbin.gets (res) ->
+    onUp {req: {uri: dbin.cfg.rest.base }, dots: true}, (res) ->
       if res.statusCode is 200
         console.log "yes"
         process.exit 0

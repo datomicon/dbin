@@ -1,10 +1,8 @@
-var DBin, Instance, merge, onUp, run;
+var DBin, Instance, merge, run;
 
 merge = require("lodash").merge;
 
 run = require("childish-process").run;
-
-onUp = require("on-up");
 
 DBin = (function() {
   function DBin() {}
@@ -47,17 +45,6 @@ Instance = (function() {
       console.log(serve.cmd);
       return run(serve.cmd, serve.opts);
     }
-  };
-
-  Instance.prototype.gets = function(cb) {
-    return onUp({
-      req: {
-        uri: this.cfg.rest.base
-      },
-      dots: true
-    }, function(res) {
-      return cb(res);
-    });
   };
 
   return Instance;

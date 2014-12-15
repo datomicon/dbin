@@ -1,6 +1,5 @@
 merge = require("lodash").merge
 run = require("childish-process").run
-onUp = require("on-up")
 
 
 class DBin
@@ -15,6 +14,7 @@ class DBin
     home = if @cfg.homeDir then require('home-dir').directory + "/" else ""
     base_path = "#{home}#{@cfg.located}/datomic-#{@cfg.edition}-#{@cfg.version}"
     alias_uri = "#{@cfg.rest.alias} #{@cfg.transactor.uri}"
+
     @cfg.transactor.cmd = "#{base_path}/bin/transactor
 #{base_path}/config/samples/free-transactor-template.properties"
     @cfg.rest.cmd = "#{base_path}/bin/rest -p #{@cfg.rest.port} #{alias_uri}"
@@ -34,10 +34,6 @@ class Instance
       serve.opts ?= {}
       console.log(serve.cmd)
       run(serve.cmd, serve.opts)
-
-  gets: (cb) ->
-    onUp {req: {uri: @cfg.rest.base }, dots: true}, (res) ->
-      cb(res)
 
 
 module.exports = new DBin

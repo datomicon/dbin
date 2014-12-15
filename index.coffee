@@ -37,6 +37,7 @@ class DBin # singleton
         serve.opts ?= {}
         console.log(serve.cmd)
         run(serve.cmd, serve.opts)
+      @
 
 
 module.exports = DBin

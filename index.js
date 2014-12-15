@@ -45,8 +45,9 @@ DBin = (function() {
           serve.opts = {};
         }
         console.log(serve.cmd);
-        return run(serve.cmd, serve.opts);
+        run(serve.cmd, serve.opts);
       }
+      return this;
     };
 
     return Datomic;

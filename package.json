@@ -19,11 +19,10 @@
   },
   "author": "Orlin M Bozhinov <om@soundsapiens.com>",
   "contributors": [],
-  "main": "servers.js",
+  "main": "index.js",
   "bin": {
     "dbin": "./cli.js"
   },
-  "main": "index.js",
   "preferGlobal": true,
   "dependencies": {
     "childish-process": "*",
@@ -31,6 +30,7 @@
     "datomic-free": "^0.1.1-1",
     "home-dir": "^0.2.0",
     "install-g": "*",
+    "lodash": "^2.4.1",
     "on-up": "*"
   },
   "devDependencies": {

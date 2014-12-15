@@ -1,4 +1,6 @@
-var DBin, Instance, onUp, run, servers;
+var DBin, Instance, merge, onUp, run, servers;
+
+merge = require("lodash").merge;
 
 run = require("childish-process").run;
 
@@ -9,10 +11,13 @@ servers = require("./servers");
 DBin = (function() {
   function DBin() {}
 
+  DBin.prototype.cfg = {};
+
   DBin.prototype.use = function(opts) {
     if ((opts != null ? opts.defaults : void 0) !== false) {
       this.cfg = require("./defaults.json");
     }
+    merge(this.cfg, opts);
     return new Instance(this.cfg);
   };
 
@@ -23,6 +28,7 @@ DBin = (function() {
 Instance = (function() {
   function Instance(cfg) {
     this.cfg = cfg;
+    this;
   }
 
   Instance.prototype.run = function(server) {

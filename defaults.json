@@ -3,6 +3,7 @@
   "edition": "free",
   "located": ".datomic-free/versions",
   "version": "0.9.5078",
+  "transactor": {},
   "rest": {
     "port": 8888,
     "alias": "let",

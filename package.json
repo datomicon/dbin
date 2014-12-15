@@ -23,6 +23,7 @@
   "bin": {
     "dbin": "./cli.js"
   },
+  "main": "index.js",
   "preferGlobal": true,
   "dependencies": {
     "childish-process": "*",

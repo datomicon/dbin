@@ -22,7 +22,7 @@ DBin = (function() {
     this.cfg.rest.cmd = "" + base_path + "/bin/rest -p " + this.cfg.rest.port + " " + alias_uri;
     this.cfg.rest.uri = "http://localhost:" + this.cfg.rest.port;
     this.cfg.rest.base = "" + this.cfg.rest.uri + "/data/" + this.cfg.rest.alias + "/";
-    return new Instance(this.cfg);
+    return this.it = new Instance(this.cfg);
   };
 
   return DBin;

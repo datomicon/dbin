@@ -21,7 +21,7 @@ class DBin
     @cfg.rest.uri = "http://localhost:#{@cfg.rest.port}"
     @cfg.rest.base = "#{@cfg.rest.uri}/data/#{@cfg.rest.alias}/"
 
-    new Instance(@cfg)
+    @it = new Instance(@cfg)
 
 
 class Instance

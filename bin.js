@@ -1,6 +1,6 @@
 var cmd, dbin;
 
-dbin = require("./index.js");
+dbin = require("./index.js").use();
 
 cmd = require("commander");
 

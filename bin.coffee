@@ -1,6 +1,6 @@
 #!/usr/bin/env coffee
 
-dbin = require("./index.js")
+dbin = require("./index.js").use()
 cmd = require("commander")
 
 cmd

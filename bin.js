@@ -1,6 +1,6 @@
-var cmd, dbin, onUp;
+var cmd, d, onUp;
 
-dbin = require("./index.js").use();
+d = require("./index.js").use();
 
 cmd = require("commander");
 
@@ -9,7 +9,7 @@ onUp = require("on-up");
 cmd.command("gets-ok?").description("get the rest api alias and report with a yes or not").action(function() {
   return onUp({
     req: {
-      uri: dbin.cfg.rest.base
+      uri: d.cfg.rest.base
     },
     dots: true
   }, function(res) {
@@ -27,10 +27,10 @@ cmd.option("-r, --rest", "start the rest server").option("-t, --transactor", "st
 
 if (process.argv.length > 2) {
   if (cmd.transactor) {
-    dbin.run("transactor");
+    d.run("transactor");
   }
   if (cmd.rest) {
-    dbin.run("rest");
+    d.run("rest");
   }
 } else {
   cmd.help();

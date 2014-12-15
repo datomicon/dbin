@@ -1,6 +1,6 @@
 #!/usr/bin/env coffee
 
-dbin = require("./index.js").use() # only with defaults for now
+d = require("./index.js").use() # only with defaults for now
 cmd = require("commander")
 onUp = require("on-up")
 
@@ -8,7 +8,7 @@ cmd
   .command("gets-ok?")
   .description("get the rest api alias and report with a yes or not")
   .action ->
-    onUp {req: {uri: dbin.cfg.rest.base }, dots: true}, (res) ->
+    onUp {req: {uri: d.cfg.rest.base }, dots: true}, (res) ->
       if res.statusCode is 200
         console.log "yes"
         process.exit 0
@@ -22,7 +22,7 @@ cmd
   .parse(process.argv)
 
 if process.argv.length > 2
-  if cmd.transactor then dbin.run("transactor")
-  if cmd.rest then dbin.run("rest")
+  if cmd.transactor then d.run("transactor")
+  if cmd.rest then d.run("rest")
 else
   cmd.help()

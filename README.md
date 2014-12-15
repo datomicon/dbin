@@ -17,10 +17,20 @@ This `dbin` package should install
 
 ## Use
 
+### cli
+
 Here are some example commands:
 
 * $ `dbin` - get help without options
 * $ `dbin -tr` - start the transactor and rest servers
+* $ `dbin gets-ok?` - wait-up for the servers to start / answer with yes or no
+
+### lib
+
+```javascript
+var d = require('dbin').use().run("transactor").run("rest")
+console.log(d.cfg)
+```
 
 ## Testing [![Build Status](https://secure.travis-ci.org/datomicon/dbin.png)](http://travis-ci.org/datomicon/dbin)
 

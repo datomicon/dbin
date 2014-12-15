@@ -8,7 +8,7 @@
     "bin",
     "spawn"
   ],
-  "version": "0.0.3",
+  "version": "0.0.4",
   "repository": {
     "type": "git",
     "url": "git://github.com/datomicon/dbin.git"
@@ -19,7 +19,7 @@
   },
   "author": "Orlin M Bozhinov <om@soundsapiens.com>",
   "contributors": [],
-  "main": "servers.js",
+  "main": "index.js",
   "bin": {
     "dbin": "./cli.js"
   },
@@ -30,6 +30,7 @@
     "datomic-free": "^0.1.1-1",
     "home-dir": "^0.2.0",
     "install-g": "*",
+    "lodash": "^2.4.1",
     "on-up": "*"
   },
   "devDependencies": {

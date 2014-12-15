@@ -1,6 +1,6 @@
 #!/usr/bin/env coffee
 
-dbin = require("./index.js").use()
+dbin = require("./index.js").use() # only with defaults for now
 cmd = require("commander")
 onUp = require("on-up")
 

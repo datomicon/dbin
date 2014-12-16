@@ -8,7 +8,7 @@ onUp = require("on-up");
 
 d = require("./index.js").use();
 
-args = yargs.usage("Usage: $0 [command] [-options]").example("$0 -rt", "same as $ dbin start --transactor --rest").example("$0 gets-ok?", "wait-up for the servers to start / answer with yes or no (whether they did)").boolean(["t", "r"]).alias("t", "transactor").describe("t", "applies to the transactor").alias("r", "rest").describe("r", "applies to the rest server").argv;
+args = yargs.usage("Usage: $0 [command] [-options]").example("$0 -rt", "same as $ dbin start --transactor --rest").example("$0 gets-ok?", "wait-up for the servers to start / answer with yes or no (whether they did)").boolean(["t", "r", "c"]).alias("t", "transactor").describe("t", "applies to the transactor").alias("r", "rest").describe("r", "applies to the rest server").alias("c", "console").describe("c", "applies to the console client").argv;
 
 cmd = _.size(args._) ? args._[0] : "start";
 
@@ -33,7 +33,7 @@ help = function(message) {
 
 switch (cmd) {
   case "start":
-    if (!(args.t || args.r)) {
+    if (!(args.t || args.r || args.c)) {
       help("Don't know what to start.");
     } else {
       if (args.t) {
@@ -41,6 +41,9 @@ switch (cmd) {
       }
       if (args.r) {
         d.run("rest");
+      }
+      if (args.c) {
+        console.log("Starting the console - isn't implemented yet.");
       }
     }
     break;

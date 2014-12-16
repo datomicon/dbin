@@ -8,6 +8,7 @@ d = require("./index.js").use() # only with defaults for now
 args = yargs
   .usage("Usage: $0 [command] [-options]")
   .example("$0 -rt", "same as $ dbin start --transactor --rest")
+  .example("$0 gets-ok?", "wait-up for the servers to start / answer with yes or no (whether they did)")
   .boolean(["t", "r"])
   .alias("t", "transactor").describe("t", "applies to the transactor")
   .alias("r", "rest").describe("r", "applies to the rest server")

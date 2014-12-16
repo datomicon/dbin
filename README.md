@@ -19,16 +19,14 @@ This `dbin` package should install
 
 ### cli
 
-Here are some example commands:
-
-* $ `dbin` - get help without options
-* $ `dbin -tr` - start the transactor and rest servers
-* $ `dbin gets-ok?` - wait-up for the servers to start / answer with yes or no (whether they did)
+```sh
+dbin help
+```
 
 ### lib
 
 ```javascript
-var d = require('dbin').use().run("transactor").run("rest")
+var d = require('dbin').use({"rest": {"port": 88}}).run("transactor").run("rest")
 console.log(d.cfg)
 ```
 

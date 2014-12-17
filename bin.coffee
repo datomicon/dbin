@@ -4,6 +4,7 @@ yargs = require("yargs")
 _ = require("lodash")
 onUp = require("on-up")
 d = require("./index.js").use() # only with defaults for now
+fs = require("fs")
 
 args = yargs
   .usage("Usage: $0 [command] [-options]")
@@ -41,7 +42,12 @@ switch cmd
     else
       if args.t then d.run("transactor")
       if args.r then d.run("rest")
-      if args.c then console.log "Starting the console - isn't implemented yet."
+      if args.c
+        if d.cfg.edition is "pro" or fs.existsSync(d.cfg.console.path)
+          d.run("console")
+        else
+          console.log "No console found at #{d.cfg.console.path}
+- please download and install it there or else set console.path accordingly."
 
   when "gets-ok?"
     onUp {req: {uri: d.cfg.rest.base }, dots: true}, (res) ->

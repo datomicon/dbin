@@ -23,6 +23,8 @@ class DBin # singleton
       @cfg.rest.cmd = "#{base_path}/bin/rest -p #{@cfg.rest.port} #{alias_uri}"
       @cfg.rest.uri = "http://localhost:#{@cfg.rest.port}"
       @cfg.rest.base = "#{@cfg.rest.uri}/data/#{@cfg.rest.alias}/"
+      @cfg.console.path = "#{base_path}/bin/console"
+      @cfg.console.cmd = "#{@cfg.console.path} -p #{@cfg.console.port} #{alias_uri}"
 
       it = new Datomic(@cfg)
 

@@ -14,7 +14,7 @@ DBin = (function() {
   DBin.prototype.cfg = {};
 
   DBin.use = function(opts) {
-    var alias_uri, base_path, home;
+    var alias_uri, base_path, home, _base;
     if (it == null) {
       if ((opts != null ? opts.defaults : void 0) !== false) {
         this.cfg = require("./defaults.json");
@@ -27,7 +27,9 @@ DBin = (function() {
       this.cfg.rest.cmd = "" + base_path + "/bin/rest -p " + this.cfg.rest.port + " " + alias_uri;
       this.cfg.rest.uri = "http://localhost:" + this.cfg.rest.port;
       this.cfg.rest.base = "" + this.cfg.rest.uri + "/data/" + this.cfg.rest.alias + "/";
-      this.cfg.console.path = "" + base_path + "/bin/console";
+      if ((_base = this.cfg.console).path == null) {
+        _base.path = "" + base_path + "/bin/console";
+      }
       this.cfg.console.cmd = "" + this.cfg.console.path + " -p " + this.cfg.console.port + " " + alias_uri;
       return it = new Datomic(this.cfg);
     }

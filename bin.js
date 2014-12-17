@@ -59,6 +59,7 @@ switch (cmd) {
           d.run("console");
         } else {
           console.log("No console found at " + d.cfg.console.path + " - please download and install it there or else set console.path accordingly.");
+          process.exit(1);
         }
       }
     }
@@ -71,8 +72,7 @@ switch (cmd) {
       dots: true
     }, function(res) {
       if (res.statusCode === 200) {
-        console.log("yes");
-        return process.exit(0);
+        return console.log("yes");
       } else {
         console.log("not");
         return process.exit(1);

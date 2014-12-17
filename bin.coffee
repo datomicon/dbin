@@ -60,12 +60,12 @@ switch cmd
         else
           console.log "No console found at #{d.cfg.console.path}
 - please download and install it there or else set console.path accordingly."
+          process.exit 1
 
   when "gets-ok?"
     onUp {req: {uri: d.cfg.rest.base }, dots: true}, (res) ->
       if res.statusCode is 200
         console.log "yes"
-        process.exit 0
       else
         console.log "not"
         process.exit 1

@@ -18,11 +18,16 @@ class DBin # singleton
       base_path = "#{home}#{@cfg.located}/datomic-#{@cfg.edition}-#{@cfg.version}"
       alias_uri = "#{@cfg.rest.alias} #{@cfg.transactor.uri}"
 
-      @cfg.transactor.cmd = "#{base_path}/bin/transactor
-  #{base_path}/config/samples/free-transactor-template.properties"
+      unless @cfg.transactor.properties?
+        protocol = if @cfg.edition is "free" then "free" else "dev"
+        stp = "#{base_path}/config/samples/#{protocol}-transactor-template.properties"
+        @cfg.transactor.properties = stp
+      @cfg.transactor.cmd = "#{base_path}/bin/transactor #{@cfg.transactor.properties}"
+
       @cfg.rest.cmd = "#{base_path}/bin/rest -p #{@cfg.rest.port} #{alias_uri}"
       @cfg.rest.uri = "http://localhost:#{@cfg.rest.port}"
       @cfg.rest.base = "#{@cfg.rest.uri}/data/#{@cfg.rest.alias}/"
+
       @cfg.console.path ?= "#{base_path}/bin/console" # configurable (to elsewhere?)
       @cfg.console.cmd = "#{@cfg.console.path} -p #{@cfg.console.port} #{alias_uri}"
 

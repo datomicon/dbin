@@ -9,5 +9,8 @@
   "rest": {
     "port": 8888,
     "alias": "let"
+  },
+  "console": {
+    "port": 8088
   }
 }

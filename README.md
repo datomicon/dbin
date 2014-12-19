@@ -26,7 +26,7 @@ dbin help
 ### lib
 
 ```javascript
-var d = require('dbin').use({"rest": {"port": 88}}).run("transactor").run("rest")
+var d = require("dbin").use({"rest": {"port": 88}}).run("transactor").run("rest")
 console.log(d.cfg)
 ```
 

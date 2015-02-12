@@ -1,16 +1,15 @@
-# dbin -- datomic/bin
-
-[![NPM](https://nodei.co/npm/dbin.png?mini=true)](https://www.npmjs.org/package/dbin)
+# dbin -- datomic/bin [![Build Status](https://img.shields.io/travis/datomicon/dbin.svg?style=flat)](https://travis-ci.org/datomicon/dbin)
 
 Helps run [Datomic](http://datomic.com) servers with configuration.
 
 ## Why
 
-To test [datomiki](https://github.com/datomicon/datomiki) for starters.
-
-Later, to run datomic servers - whether for development or in production.
+To test libs, such as [datomiki](https://github.com/datomicon/datomiki),
+and run Datomic servers - first for development, later on production.
 
 ## Install
+
+[![NPM](https://nodei.co/npm/dbin.png?mini=true)](https://www.npmjs.org/package/dbin)
 
 This `dbin` package should install
 [datomic-free](https://www.npmjs.org/package/datomic-free) as well.
@@ -30,7 +29,7 @@ var d = require("dbin").use({"rest": {"port": 88}}).run("transactor").run("rest"
 console.log(d.cfg)
 ```
 
-## Testing [![Build Status](https://secure.travis-ci.org/datomicon/dbin.png)](http://travis-ci.org/datomicon/dbin)
+## Testing [![Build Status](https://img.shields.io/travis/datomicon/dbin.svg?style=flat)](https://travis-ci.org/datomicon/dbin)
 
 1. `dbin -rt`
 2. `npm test`

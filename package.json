@@ -8,7 +8,7 @@
     "bin",
     "spawn"
   ],
-  "version": "0.0.4-1",
+  "version": "0.0.5",
   "repository": {
     "type": "git",
     "url": "git://github.com/datomicon/dbin.git"
@@ -42,7 +42,7 @@
   "scripts": {
     "gulp": "./node_modules/.bin/gulp",
     "install": "./install.js || true",
-    "test": "dbin gets-ok?"
+    "test": "./cli.js gets-ok?"
   },
   "engines": {
     "node": "0.10.x"

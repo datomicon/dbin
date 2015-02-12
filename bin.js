@@ -72,7 +72,8 @@ switch (cmd) {
       dots: true
     }, function(res) {
       if (res.statusCode === 200) {
-        return console.log("yes");
+        console.log("yes");
+        return process.exit(0);
       } else {
         console.log("not");
         return process.exit(1);

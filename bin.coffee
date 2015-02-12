@@ -66,6 +66,7 @@ switch cmd
     onUp {req: {uri: d.cfg.rest.base }, dots: true}, (res) ->
       if res.statusCode is 200
         console.log "yes"
+        process.exit 0
       else
         console.log "not"
         process.exit 1

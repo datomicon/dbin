@@ -8,7 +8,7 @@ branches:
 install:
   - npm install
 before_script:
-  - dbin -rt &
+  - ./cli.js -rt &
 notifications:
   email:
     recipients:

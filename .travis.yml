@@ -1,12 +1,14 @@
 language: node_js
 node_js:
   - 0.10
+  - 0.12
 branches:
   only:
     - active
     - test
 install:
   - npm install
+  - npm i -g batshit
 before_script:
   - ./cli.js -rt &
 notifications:

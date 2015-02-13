@@ -31,6 +31,8 @@ console.log(d.cfg)
 
 ## Testing [![Build Status](https://img.shields.io/travis/datomicon/dbin.svg?style=flat)](https://travis-ci.org/datomicon/dbin)
 
+After `npm install -g batshit` one-time prerequisite:
+
 1. `dbin -rt`
 2. `npm test`
 

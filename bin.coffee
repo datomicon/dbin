@@ -27,7 +27,7 @@ catch error
   console.log error
   process.exit 1
 
-if args.p?
+if args.p
   console.log()
   console.log d.cfg
   console.log()

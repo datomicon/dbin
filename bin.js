@@ -22,7 +22,7 @@ try {
   process.exit(1);
 }
 
-if (args.p != null) {
+if (args.p) {
   console.log();
   console.log(d.cfg);
   console.log();

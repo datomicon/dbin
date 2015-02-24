@@ -1,4 +1,4 @@
-var args, cmd, cmds, d, dbin, error, fs, help, onUp, yargs, _;
+var args, cmd, cmds, d, dbin, error, fs, help, onUp, path, yargs, _;
 
 yargs = require("yargs");
 
@@ -8,11 +8,16 @@ onUp = require("on-up");
 
 dbin = require("./index.js");
 
+path = require("path");
+
 fs = require("fs");
 
-args = yargs.usage("Usage: $0 [command] [-options]").example("$0 -rt", "same as $ dbin start --transactor --rest").example("$0 gets-ok?", "wait-up for the servers to start / answer with yes or no (whether they did)").string("o").alias("o", "config").describe("o", "merged into defaults.json - see README.md for more info").boolean(["p", "t", "r", "c"]).alias("p", "print").describe("p", "prints the config").alias("t", "transactor").describe("t", "applies to the transactor").alias("r", "rest").describe("r", "applies to the rest server").alias("c", "console").describe("c", "applies to the console client").argv;
+args = yargs.usage("Usage: $0 [command] [-options]").example("$0 -rt", "same as $ dbin start --transactor --rest").example("$0 gets-ok?", "wait-up for the servers to start / answer with yes or no (whether they did)").string("o").alias("o", "config").describe("o", "from file, merged into defaults.json").boolean(["p", "t", "r", "c"]).alias("p", "print").describe("p", "prints the config").alias("t", "transactor").describe("t", "applies to the transactor").alias("r", "rest").describe("r", "applies to the rest server").alias("c", "console").describe("c", "applies to the console client").argv;
 
 try {
+  if ((args.o != null) && args.o[0] !== '/') {
+    args.o = path.join(process.cwd(), args.o);
+  }
   d = dbin.use(args.o != null ? require(args.o) : void 0);
 } catch (_error) {
   error = _error;

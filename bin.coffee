@@ -4,6 +4,7 @@ yargs = require("yargs")
 _ = require("lodash")
 onUp = require("on-up")
 dbin = require("./index.js")
+path = require("path")
 fs = require("fs")
 
 
@@ -11,7 +12,7 @@ args = yargs
   .usage("Usage: $0 [command] [-options]")
   .example("$0 -rt", "same as $ dbin start --transactor --rest")
   .example("$0 gets-ok?", "wait-up for the servers to start / answer with yes or no (whether they did)")
-  .string("o").alias("o", "config").describe("o", "merged into defaults.json - see README.md for more info")
+  .string("o").alias("o", "config").describe("o", "from file, merged into defaults.json")
   .boolean(["p", "t", "r", "c"])
   .alias("p", "print").describe("p", "prints the config")
   .alias("t", "transactor").describe("t", "applies to the transactor")
@@ -20,6 +21,8 @@ args = yargs
   .argv
 
 try
+  # setup relative config options path unless it starts with / (i.e. is absolute)
+  if args.o? and args.o[0] != '/' then args.o = path.join process.cwd(), args.o
   d = dbin.use(if args.o? then require(args.o))
 catch error
   console.log "Bad options --config '#{args.o}'."

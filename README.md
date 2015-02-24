@@ -14,6 +14,10 @@ and run Datomic servers - first for development, later on production.
 This `dbin` package should install
 [datomic-free](https://www.npmjs.org/package/datomic-free) as well.
 
+Running the console with datomic-free is possible, after a manual download.
+
+Running datomic-pro servers works, after a manual download + custom config.
+
 ## Use
 
 ### cli
@@ -28,6 +32,31 @@ dbin help
 var d = require("dbin").use({"rest": {"port": 88}}).run("transactor").run("rest")
 console.log(d.cfg)
 ```
+
+### config
+
+Here is an example for setting up datomic-pro:
+
+```json
+{
+  "homeDir": false,
+  "edition": "pro",
+  "located": "datomic/pro",
+  "version": "0.9.5052",
+  "transactor":
+    { "properties": "../../config/dev-transactor.cfg" }
+}
+```
+
+Datomic is downloaded / extracted to `datomic/pro`, manually for now.
+The transactor config is setup in `datomic/config`.
+The above json config could be in `datomic/config`, or anywhere else.
+
+So one can run `dbin -crt -o datomic/config/options.json`
+to start the datomic console, rest server and transactor
+with the fewest possible overrides.
+
+See `defaults.json` for further configuration options.
 
 ## Testing [![Build Status](https://img.shields.io/travis/datomicon/dbin.svg?style=flat)](https://travis-ci.org/datomicon/dbin)
 

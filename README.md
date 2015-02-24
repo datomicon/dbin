@@ -15,6 +15,7 @@ This `dbin` package should install
 [datomic-free](https://www.npmjs.org/package/datomic-free) as well.
 
 Running the console with datomic-free is possible, after a manual download.
+
 Running datomic-pro servers works, after a manual download + custom config.
 
 ## Use
@@ -52,7 +53,7 @@ The transactor config is setup in `datomic/config`.
 The above json config could be in `datomic/config`, or anywhere else.
 
 So one can run `dbin -crt -o datomic/config/options.json`
-to start the transactor, rest server and console
+to start the datomic console, rest server and transactor
 with the fewest possible overrides.
 
 See `defaults.json` for further configuration options.

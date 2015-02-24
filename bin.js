@@ -10,7 +10,7 @@ dbin = require("./index.js");
 
 fs = require("fs");
 
-args = yargs.usage("Usage: $0 [command] [-options]").example("$0 -rt", "same as $ dbin start --transactor --rest").example("$0 gets-ok?", "wait-up for the servers to start / answer with yes or no (whether they did)").string("o").alias("o", "config").describe("o", "merged into defaults.json - see README.md for more info").boolean(["t", "r", "c"]).alias("t", "transactor").describe("t", "applies to the transactor").alias("r", "rest").describe("r", "applies to the rest server").alias("c", "console").describe("c", "applies to the console client").argv;
+args = yargs.usage("Usage: $0 [command] [-options]").example("$0 -rt", "same as $ dbin start --transactor --rest").example("$0 gets-ok?", "wait-up for the servers to start / answer with yes or no (whether they did)").string("o").alias("o", "config").describe("o", "merged into defaults.json - see README.md for more info").boolean(["p", "t", "r", "c"]).alias("p", "print").describe("p", "prints the config").alias("t", "transactor").describe("t", "applies to the transactor").alias("r", "rest").describe("r", "applies to the rest server").alias("c", "console").describe("c", "applies to the console client").argv;
 
 try {
   d = dbin.use(args.o != null ? require(args.o) : void 0);
@@ -20,6 +20,12 @@ try {
   console.log("The file must be / export valid json.");
   console.log(error);
   process.exit(1);
+}
+
+if (args.p != null) {
+  console.log();
+  console.log(d.cfg);
+  console.log();
 }
 
 cmd = _.size(args._) ? args._[0] : "start";

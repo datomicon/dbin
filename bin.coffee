@@ -1,4 +1,4 @@
-#!/usr/bin/env coffee
+require("source-map-support").install()
 
 yargs = require("yargs")
 _ = require("lodash")

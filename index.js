@@ -1,5 +1,7 @@
 var DBin, merge, run;
 
+require("source-map-support").install();
+
 merge = require("lodash").merge;
 
 run = require("childish-process").run;
@@ -68,3 +70,5 @@ DBin = (function() {
 })();
 
 module.exports = DBin;
+
+//# sourceMappingURL=maps/index.js.map

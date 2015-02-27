@@ -1,5 +1,7 @@
 var _, args, cmd, cmds, d, dbin, error, fs, help, onUp, path, yargs;
 
+require("source-map-support").install();
+
 yargs = require("yargs");
 
 _ = require("lodash");
@@ -95,3 +97,5 @@ switch (cmd) {
   case "help":
     help();
 }
+
+//# sourceMappingURL=maps/bin.js.map

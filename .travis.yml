@@ -3,13 +3,14 @@ node_js:
   - 0.12
 branches:
   only:
-    - active
     - test
+    - active
+    - master
 install:
   - npm install
   - npm i -g batshit
 before_script:
-  - ./cli.js -rt &
+  - npm start &
 notifications:
   email:
     recipients:

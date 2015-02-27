@@ -62,7 +62,7 @@ See `defaults.json` for further configuration options.
 
 After `npm install -g batshit` one-time prerequisite:
 
-1. `dbin -rt`
+1. `npm start`
 2. `npm test`
 
 ## License

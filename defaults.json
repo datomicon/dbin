@@ -3,6 +3,7 @@
   "edition": "free",
   "located": ".datomic-free/versions",
   "version": "0.9.5078",
+  "db": "test",
   "transactor": {
     "uri": "datomic:free://localhost:4334/"
   },

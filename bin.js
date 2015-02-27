@@ -1,4 +1,4 @@
-var args, cmd, cmds, d, dbin, error, fs, help, onUp, path, yargs, _;
+var _, args, cmd, cmds, d, dbin, error, fs, help, onUp, path, yargs;
 
 yargs = require("yargs");
 

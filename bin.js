@@ -82,7 +82,8 @@ switch (cmd) {
       req: {
         uri: d.cfg.rest.base
       },
-      dots: true
+      dots: true,
+      patience: 70000
     }, function(res) {
       if (res.statusCode === 200) {
         console.log("yes");

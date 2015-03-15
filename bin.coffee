@@ -71,7 +71,7 @@ switch cmd
           process.exit 1
 
   when "gets-ok?"
-    onUp {req: {uri: d.cfg.rest.base }, dots: true}, (res) ->
+    onUp {req: {uri: d.cfg.rest.base}, dots: true, patience: 70000}, (res) ->
       if res.statusCode is 200
         console.log "yes"
         process.exit 0

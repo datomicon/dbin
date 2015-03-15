@@ -1,7 +1,7 @@
 var gulp = require('gulp')
 var gutil = require('gulp-util')
 var coffee = require('gulp-coffee')
-var sourcemaps = require('gulp-sourcemaps');
+var sourcemaps = require('gulp-sourcemaps')
 
 gulp.task('coffee', function() {
   gulp.src('./*.coffee')

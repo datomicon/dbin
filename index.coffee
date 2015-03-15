@@ -1,7 +1,7 @@
 require("source-map-support").install()
 
 merge = require("lodash").merge
-run = require("childish-process").run
+run = require("childish-process")
 
 
 class DBin # singleton

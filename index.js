@@ -2,7 +2,7 @@ var DBin, merge, run;
 
 require("source-map-support").install();
 
-merge = require("lodash").merge;
+merge = require("lodash.merge");
 
 run = require("childish-process");
 

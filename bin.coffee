@@ -1,7 +1,6 @@
 require("source-map-support").install()
 
 yargs = require("yargs")
-_ = require("lodash")
 onUp = require("on-up")
 dbin = require("./index.js")
 path = require("path")
@@ -36,7 +35,7 @@ if args.p
   console.log()
 
 # the first arg is the command, defaults to start
-cmd = if _.size args._ then args._[0] else "start"
+cmd = if args._.length then args._[0] else "start"
 
 cmds =
   start: "the default -- starts the options-specified servers"

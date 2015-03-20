@@ -1,8 +1,8 @@
-var _, args, cmd, cmds, d, dbin, error, fs, help, onUp, path, yargs;
+var args, cmd, cmds, d, dbin, error, fs, help, onUp, path, yargs;
+
+require("source-map-support").install();
 
 yargs = require("yargs");
-
-_ = require("lodash");
 
 onUp = require("on-up");
 
@@ -33,7 +33,7 @@ if (args.p) {
   console.log();
 }
 
-cmd = _.size(args._) ? args._[0] : "start";
+cmd = args._.length ? args._[0] : "start";
 
 cmds = {
   start: "the default -- starts the options-specified servers",
@@ -80,7 +80,8 @@ switch (cmd) {
       req: {
         uri: d.cfg.rest.base
       },
-      dots: true
+      dots: true,
+      patience: 70000
     }, function(res) {
       if (res.statusCode === 200) {
         console.log("yes");
@@ -95,3 +96,5 @@ switch (cmd) {
   case "help":
     help();
 }
+
+//# sourceMappingURL=maps/bin.js.map

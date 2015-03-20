@@ -1,7 +1,6 @@
-#!/usr/bin/env coffee
+require("source-map-support").install()
 
 yargs = require("yargs")
-_ = require("lodash")
 onUp = require("on-up")
 dbin = require("./index.js")
 path = require("path")
@@ -36,7 +35,7 @@ if args.p
   console.log()
 
 # the first arg is the command, defaults to start
-cmd = if _.size args._ then args._[0] else "start"
+cmd = if args._.length then args._[0] else "start"
 
 cmds =
   start: "the default -- starts the options-specified servers"
@@ -71,7 +70,7 @@ switch cmd
           process.exit 1
 
   when "gets-ok?"
-    onUp {req: {uri: d.cfg.rest.base }, dots: true}, (res) ->
+    onUp {req: {uri: d.cfg.rest.base}, dots: true, patience: 70000}, (res) ->
       if res.statusCode is 200
         console.log "yes"
         process.exit 0

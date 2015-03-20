@@ -1,8 +1,10 @@
 var DBin, merge, run;
 
-merge = require("lodash").merge;
+require("source-map-support").install();
 
-run = require("childish-process").run;
+merge = require("lodash.merge");
+
+run = require("childish-process");
 
 DBin = (function() {
   var Datomic, it;
@@ -68,3 +70,5 @@ DBin = (function() {
 })();
 
 module.exports = DBin;
+
+//# sourceMappingURL=maps/index.js.map
